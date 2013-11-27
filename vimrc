@@ -62,7 +62,10 @@ end
 
 filetype plugin indent on     " required!
 syntax enable
-colorscheme jc
+colorscheme xoria256
+
+set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+
 runtime macros/matchit.vim
 let g:EasyMotion_leader_key = '<Space>'
 
@@ -317,6 +320,9 @@ function! LineNumberToggle()
   endif
 endfunc
 "}}}
+
+set relativenumber!
+
 "{{{ Toggle the arrow keys
 
 let g:arrow_keys_enabled = 1
@@ -424,12 +430,12 @@ imap jk <Esc>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
 " Show trailing white space
-match ExtraSpace /\s\+$/
-autocmd BufWinEnter * match ExtraSpace /\s\+$/
-autocmd InsertEnter * match ExtraSpace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraSpace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
-nnoremap <leader>z :%s/\s\+$//<cr>:let @/=''<CR>
+" match ExtraSpace /\s\+$/
+" autocmd BufWinEnter * match ExtraSpace /\s\+$/
+" autocmd InsertEnter * match ExtraSpace /\s\+\%#\@<!$/
+" autocmd InsertLeave * match ExtraSpace /\s\+$/
+" autocmd BufWinLeave * call clearmatches()
+" nnoremap <leader>z :%s/\s\+$//<cr>:let @/=''<CR>
 
 let g:ctrlp_working_path_mode = 'ra'
 
